@@ -8,6 +8,10 @@
 #include <arpa/inet.h> // defines in_addr structure
 #include <sys/socket.h> // for socket creation
 #include <netinet/in.h> //contains constants and structures needed for internet domain addresses
+#include <iostream>
+
+using namespace std;
+
  int send_image(int socket){
 
    FILE *picture;
@@ -65,9 +69,12 @@
     }
 
 //int main()
-int mnmain(int x, int y)
+int mnmain(char* x, char* y)
 {
-    time_t clock;
+std::cout << x << y;
+
+
+        time_t clock;
 	char dataSending[1025]; // Actually this is called packet in Network Communication, which contain data and send through.
 	int clintListn = 0, clintConnt = 0;
 	struct sockaddr_in ipOfServer;
@@ -85,13 +92,13 @@ int mnmain(int x, int y)
 		printf("\n\nHi,Iam running server.Some Client hit me\n"); // whenever a request from client came. It will be processed here.
 		clintConnt = accept(clintListn, (struct sockaddr*)NULL, NULL);
  
-		clock = time(NULL);
+		//clock = time(NULL);
 		//char* sample="Hi";
                 //write(clintConnt, sample, strlen(sample));
 		//snprintf(dataSending, sizeof(dataSending), "%.24s\r\n", ctime(&clock)); // Printing successful message
 		//write(clintConnt, dataSending, strlen(dataSending));
                 send_image(clintConnt);
-        //close(clintConnt);
+        close(clintConnt);
         sleep(1);
      }
  

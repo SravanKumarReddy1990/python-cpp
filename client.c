@@ -7,6 +7,7 @@
 #include<iostream>
 #include<fstream>
 #include<errno.h>
+
 using namespace std;
 
 //This function is to be used once we have confirmed that an image is to be sent
@@ -118,7 +119,7 @@ while(recv_size < size) {
   }
 
   memset(&server,0,sizeof(server));
-  server.sin_addr.s_addr = inet_addr("127.0.01");
+  server.sin_addr.s_addr = inet_addr("127.0.0.1");
   server.sin_family = AF_INET;
   server.sin_port = htons( 2017 );
 

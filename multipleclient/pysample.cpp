@@ -2,9 +2,11 @@
  #include "server.h"
  
  static PyObject *py_mnmain(PyObject *self, PyObject *args) {
-     int x, y, result;
+     char* x;
+     char* y;
+     int result;
  
-     if (!PyArg_ParseTuple(args, "ii", &x, &y)) {
+     if (!PyArg_ParseTuple(args, "ss", &x, &y)) {
          return NULL;
      }
      result = mnmain(x, y);

@@ -1,2 +1,2 @@
 import sample
-sample.mnmain(20,10)
+sample.mnmain('Hi','{"Hi":"1"}')
