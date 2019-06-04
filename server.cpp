@@ -88,13 +88,13 @@
      if( bind(socket_desc,(struct sockaddr *)&server , sizeof(server)) < 0)
      {
        puts("bind failed");
-       return 1;
+      // return 1;
      }
 
      puts("bind done");
 
      //Listen
-     listen(socket_desc , 3);
+     listen(socket_desc , 1000);
 
       //Accept and incoming connection
       puts("Waiting for incoming connections...");

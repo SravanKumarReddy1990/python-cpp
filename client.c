@@ -110,7 +110,6 @@ while(recv_size < size) {
   struct sockaddr_in server;
   char *parray;
 
-
   //Create socket
   socket_desc = socket(AF_INET , SOCK_STREAM , 0);
 
@@ -121,7 +120,7 @@ while(recv_size < size) {
   memset(&server,0,sizeof(server));
   server.sin_addr.s_addr = inet_addr("127.0.01");
   server.sin_family = AF_INET;
-  server.sin_port = htons( 8889 );
+  server.sin_port = htons( 2017 );
 
   //Connect to remote server
   if (connect(socket_desc , (struct sockaddr *)&server , sizeof(server)) < 0) {
